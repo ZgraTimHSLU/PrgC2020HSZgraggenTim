@@ -17,5 +17,5 @@ int main( int argc, char* argv [] )
 	}
 return 0;
 }
-	// Achtung!!! counter-- l¨auft ins Unendliche
+	// Achtung!!! counter-- laeuft ins Unendliche
 	// Abbrechen mit ESC
