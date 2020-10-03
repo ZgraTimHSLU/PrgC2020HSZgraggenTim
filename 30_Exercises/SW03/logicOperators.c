@@ -18,7 +18,7 @@ int main( int argc, char* argv [] )
 		value3 = atoi(argv[3]);					
 		printf("\nValue1 = %d, Value2 = %d, Value3 = %d\n", value1, value2, value3);
 			
-		int x = 0, y = 0; // largest, smallest
+		int greatest = 0, smallest = 0; 
 	
 		if ( value1 <0 || value2 <0 || value3 < 0 )
 		{
@@ -26,39 +26,44 @@ int main( int argc, char* argv [] )
 		}
 		else
 		{
-			if((value1 < value3 && value2 < value3) && (value1 < value2))
+			if(value3 > value1 && value3 > value2) 
 			{
-				x = value3;
-				y = value1;	
-			}
-			else
-			{	
-				x = value3;
-				y = value2;		
-				if((value1 > value3 && value2 > value3) && (value1 > value2))
+				greatest = value3;
+				if (value1 < value2)
 				{
-					x = value1;
-					y = value3;		
+					smallest = value1;
+				}
+				else
+					smallest = value2;
+			}
+			else 
+			{		
+				if(value2 > value1 && value2 > value3) 
+				{
+					greatest = value2;
+					if (value1 < value3)
+					{
+						smallest = value1;
+					}
+					else
+						smallest = value3;
 				}
 				else
 				{
-					x = value2;
-					y = value3;
-					if(value1 > value3 && value2 < value3)
+					greatest = value1;
+					if (value2 < value3)
 					{
-					x = value1;
-					y = value2;		
-					}	
+						smallest = value2;
+					}
 					else
 					{
-						x = value2;
-						y = value1;
+						smallest = value3;
 					}
 				}			
 			}
-			printf("largest Value %d smallest Value %d \n", x, y );
+			printf("largest Value %d smallest Value %d \n", greatest, smallest );
 		}	
 	}	
 	
-return 0;
+	return 0;
 }
